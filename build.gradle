@@ -1,0 +1,29 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.5'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'kavindu.ofj'
+version = '0.0.1'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'dev.openfeature:javasdk:0.2.2'
+}
+
+tasks{
+	bootJar{
+		archiveName("OFJBootApp.jar")
+	}
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
